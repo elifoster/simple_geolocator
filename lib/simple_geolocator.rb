@@ -2,7 +2,8 @@ require 'httpclient'
 require 'json'
 
 module SimpleGeolocator
-  extend self
+  module_function
+
   @client = HTTPClient.new
 
   # Gets the full JSON response, useful for getting multiple pieces of data in
@@ -13,7 +14,7 @@ module SimpleGeolocator
     url = "http://ip-api.com/json/#{ip}"
     uri = URI.parse(url)
     response = @client.get(uri)
-    return JSON.parse(response.body)
+    JSON.parse(response.body)
   end
 
   # Gets whether the request failed or not.
@@ -36,8 +37,8 @@ module SimpleGeolocator
     response = get_full_response(ip)
     if request_successful?(response)
       ret = {
-        :name => response['country'],
-        :code => response['countryCode']
+        name: response['country'],
+        code: response['countryCode']
       }
       return ret
     else
@@ -53,8 +54,8 @@ module SimpleGeolocator
     response = get_full_response(ip)
     if request_successful?(response)
       ret = {
-        :name => response['regionName'],
-        :code => response['region']
+        name: response['regionName'],
+        code: response['region']
       }
       return ret
     else
@@ -140,7 +141,8 @@ module SimpleGeolocator
   end
 
   private
+
   def error(response)
-    return response['message']
+    response['message']
   end
 end
