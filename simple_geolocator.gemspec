@@ -3,7 +3,7 @@ Gem::Specification.new do |s|
   s.name = 'simple_geolocator'
   s.summary = 'A Ruby gem for easily using the IP-API.com API to perform ' \
               'IP geolocation.'
-  s.version = '1.0.0'
+  s.version = '1.1.0'
   s.license = 'CC-BY-NC-ND-4.0'
   s.description = 'Accessing the IP API through HTTPClient. I found that many' \
                   ', if not all, Geolocation gems were very annoying and ' \
@@ -21,5 +21,5 @@ Gem::Specification.new do |s|
     'CHANGELOG.md',
     'lib/simple_geolocator.rb'
   ]
-  s.add_runtime_dependency('httpclient')
+  s.add_runtime_dependency('httpclient', '~> 2.6', '>= 2.6.0.1')
 end
