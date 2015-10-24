@@ -5,16 +5,18 @@ module SimpleGeolocator
   extend self
 
   @client = HTTPClient.new
+  @cache = Hash.new
 
   # Gets the full JSON response, useful for getting multiple pieces of data in
   #   a single request.
   # @param ip [String] The IP to get data for.
   # @return [JSON] A parsed JSON object containing the response.
   def get_full_response(ip)
-    url = "http://ip-api.com/json/#{ip}"
+    return @cache[ip] unless @cache[ip].nil?
+    url = "http://ip-api.com/json/#{ip}?fields=258047"
     uri = URI.parse(url)
     response = @client.get(uri)
-    JSON.parse(response.body)
+    @cache[ip] = JSON.parse(response.body)
   end
 
   # Gets whether the request failed or not.
@@ -134,6 +136,22 @@ module SimpleGeolocator
     return err unless err.nil?
 
     response['org']
+  end
+
+  # Gets the IP connection attributes - if it's a mobile and/or a proxy connection
+  # @param ip [String] See #get_full_response
+  # @return [Hash] A hash containing data formatted as
+  #   { :mobile => true, :proxy => true}
+  # @return [String] A string containing the error message.
+  def connection(ip)
+    response = get_full_response(ip)
+    err = error(response)
+    return err unless err.nil?
+    ret = {
+      mobile: response['mobile'],
+      proxy: response['proxy']
+    }
+    ret
   end
 
   # Gets the according description for the semi-ambiguous error returned by the
