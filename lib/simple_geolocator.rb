@@ -5,7 +5,7 @@ module SimpleGeolocator
   extend self
 
   @client = HTTPClient.new
-  @cache = Hash.new
+  @cache = {}
 
   # Gets the full JSON response, useful for getting multiple pieces of data in
   #   a single request.
@@ -138,7 +138,8 @@ module SimpleGeolocator
     response['org']
   end
 
-  # Gets the IP connection attributes - if it's a mobile and/or a proxy connection
+  # Gets the IP connection attributes - if it's a mobile and/or a proxy
+  #   connection.
   # @param ip [String] See #get_full_response
   # @return [Hash] A hash containing data formatted as
   #   { :mobile => true, :proxy => true}
