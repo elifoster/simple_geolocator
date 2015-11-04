@@ -1,5 +1,8 @@
 # Changelog
 ## Version 1
+### Version 1.3.0
+* New CLI called 'simplegeo'. Simply pass it an IP and it'll give you data!
+
 ### Version 1.2.0
 * Implement a simple cache that will prevent you ever exceeding the request quota! (vladc)
 * New method connection for getting the types of connection you have (proxy and/or mobile) (vladc)

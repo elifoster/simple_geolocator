@@ -2,12 +2,16 @@ GEM
   remote: https://rubygems.org/
   specs:
     httpclient (2.6.0.1)
+    rainbow (2.0.0)
+    string-utility (2.5.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   httpclient (= 2.6.0.1)
+  rainbow (= 2.0.0)
+  string-utility (= 2.5.0)
 
 BUNDLED WITH
    1.10.6
