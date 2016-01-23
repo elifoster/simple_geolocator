@@ -1,5 +1,8 @@
 # Changelog
 ## Version 1
+### Version 1.3.1
+* Update to Ruby 2.3 and HTTPClient 2.7
+
 ### Version 1.3.0
 * New CLI called 'simplegeo'. Simply pass it an IP and it'll give you data!
 
