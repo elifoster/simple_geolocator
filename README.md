@@ -1,4 +1,6 @@
 # simple_geolocator
+[![Gem Version](https://badge.fury.io/rb/simple_geolocator.svg)](https://badge.fury.io/rb/simple_geolocator)
+
 A simple Geolocating Ruby Gem utilizing IP-API.com.
 
 ## Installation
@@ -41,8 +43,4 @@ Exact location: 39.9289, 116.3883
 Also note that this IP is not some significant person as far as I know; I literally just typed in random numbers when writing this README.
 
 ## Documentation
-Please see the [Wiki](https://github.com/elifoster/simple_geolocator/wiki) for feature lists, documentation, and guides.
-
-You can also view the [RubyDocs](http://www.rubydoc.info/gems/simple_geolocator) but they are more limited.
-
-You can also view the documentation in the code, which would probably be fastest for you anyway.
+Please see the [RubyDocs](http://www.rubydoc.info/gems/simple_geolocator).
