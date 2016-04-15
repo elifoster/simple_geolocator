@@ -1,4 +1,30 @@
 # Changelog
+## Version 2
+### Version 2.0.0
+* Complete rewrite of the gem. Includes the following changes:
+  * SimpleGeolocator is no longer a helper module containing methods for every type of data. Now, you call the 
+  `SimpleGeolocator#get` function, which returns an IPAPIResponse object. This object has instance attributes to 
+  replace almost all of the old SimpleGeolocator module functions. The exception to this is connection, which has 
+  been replaced by the `IPAPIResponse#mobile?` and `IPAPIResponse#proxy?` functions.
+  * Proper error handling has been introduced. Functions will no longer return error strings. Now, 
+  `IPAPIResponse#initialize` fails with the according errors, to quickly alert the developer or user that something 
+  has gone wrong.
+  * `zip` is no longer an Integer, because that implies that some math should be done on it. It is a String now. You 
+  can call `#to_i` if you for some reason want it to be an Integer.
+  * Region (`#region`) and country (`#country`) are now represented by a LOCATION_STRUCT Struct, which has 2 instance 
+  attributes: name and code.
+  * Longitude and latitude (`#ll`) are no longer represented as an array, but a Pair from the data_types gem. This 
+  makes significantly more conceptual sense.
+  * `#isp_name` and `#organization_name` are now represented by the new named `isp` and `organization` instance 
+  attributes.
+* Changes to the libraries and requirements:
+  * HTTPClient is no longer used. It had largely too much overhead for a gem this simple. When we do not need 
+  keepalive, complicated requests, or even just a "full" client, I found it didn't make sense to use it.  Now, Curb 
+  is used.
+  * The stdlib JSON library is not used anymore. It has been replaced by Optimized JSON (Oj) for performance reasons.
+  * data_types is now a library used by SimpleGeolocator.
+  * Pessimistic version requirements are now used.
+
 ## Version 1
 ### Version 1.3.2
 * License as MIT

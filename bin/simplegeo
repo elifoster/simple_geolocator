@@ -9,30 +9,27 @@ require 'string-utility'
 require_relative '../lib/simple_geolocator'
 
 if ARGV.empty?
-  puts 'You must provide an IP.'
-  exit
+  fail 'You must provide an IP.'
 end
 
 ip = ARGV[0]
-city = SimpleGeolocator.city(ip)
-region = SimpleGeolocator.region(ip)[:name]
-country = SimpleGeolocator.country(ip)[:name]
-zip = SimpleGeolocator.zip(ip)
-ll = SimpleGeolocator.ll(ip)
-timezone = SimpleGeolocator.timezone(ip)
-isp = SimpleGeolocator.isp_name(ip)
-org = SimpleGeolocator.organization_name(ip)
-connection_attributes = SimpleGeolocator.connection(ip)
+response = SimpleGeolocator.get(ip)
+city = response.city
+region = response.region.name
+country = response.country.name
+zip = response.zip
+ll = response.ll
+timezone = response.timezone
+isp = response.isp
+org = response.organization
+mobile = response.mobile?
+proxy = response.proxy?
 
 puts "Here is the data for #{ip}:"
 puts Rainbow("ISP: #{isp}").color(StringUtility.random_color_six)
 puts Rainbow("Organization: #{org}").color(StringUtility.random_color_six)
 puts Rainbow("Timezone: #{timezone}").color(StringUtility.random_color_six)
-puts Rainbow("Location: #{city}, #{region}, #{country}, #{zip}")
-  .color(StringUtility.random_color_six)
-puts Rainbow("Exact location: #{ll[0]}, #{ll[1]}")
-  .color(StringUtility.random_color_six)
-puts Rainbow('They are using a mobile connection.')
-  .color(StringUtility.random_color_six) if connection_attributes[:mobile]
-puts Rainbow('They are using a proxy.')
-  .color(StringUtility.random_color_six) if connection_attributes[:proxy]
+puts Rainbow("Location: #{city}, #{region}, #{country}, #{zip}").color(StringUtility.random_color_six)
+puts Rainbow("Exact location: #{ll.left}, #{ll.right}").color(StringUtility.random_color_six)
+puts Rainbow('They are using a mobile connection.').color(StringUtility.random_color_six) if mobile
+puts Rainbow('They are using a proxy.').color(StringUtility.random_color_six) if proxy

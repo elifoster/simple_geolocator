@@ -1,18 +1,13 @@
 Gem::Specification.new do |s|
   s.authors = ['Eli Foster']
   s.name = 'simple_geolocator'
-  s.summary = 'A Ruby gem for easily using the IP-API.com API to perform ' \
-              'IP geolocation.'
-  s.version = '1.3.2'
+  s.summary = 'A Ruby gem for easily using the IP-API.com API to perform IP geolocation.'
+  s.version = '2.0.0'
   s.license = 'MIT'
-  s.description = 'Accessing the IP API through HTTPClient. I found that many' \
-                  ', if not all, Geolocation gems were very annoying and ' \
-                  'overly-complex to use. Thus, this gem was born. It ' \
-                  'does not use anything like Google or Yahoo! Geolocation ' \
-                  'because I have found that those APIs are unpredictable ' \
-                  'and often-times broken. This Gem has been made to be as ' \
-                  'simple to use as possible. It also includes a CLI that can' \
-                  ' be called simple as \'simplegeo\' followed by the IP.'
+  s.description = <<EOF
+Accessing the IP API through Curb. This gem has been made to be as simple to use as possible. As such, it even includes
+a CLI that can be called through `simplegeo <ip>`.
+EOF
   s.email = 'elifosterwy@gmail.com'
   s.homepage = 'https://github.com/elifoster/simple_geolocator'
   s.metadata = {
@@ -21,10 +16,13 @@ Gem::Specification.new do |s|
   s.files = [
     'CHANGELOG.md',
     'lib/simple_geolocator.rb',
+    'lib/simple_geolocator/ipapi_response.rb',
     'bin/simplegeo'
   ]
   s.executables = 'simplegeo'
-  s.add_runtime_dependency('rainbow', '2.0.0')
-  s.add_runtime_dependency('string-utility', '>= 2.5.0')
-  s.add_runtime_dependency('httpclient', '~> 2.6', '>= 2.6.0.1')
+  s.add_runtime_dependency('rainbow', '~> 2')
+  s.add_runtime_dependency('string-utility', '~> 2')
+  s.add_runtime_dependency('curb', '~> 0.9')
+  s.add_runtime_dependency('oj', '~> 2')
+  s.add_runtime_dependency('data_types', '~> 1')
 end

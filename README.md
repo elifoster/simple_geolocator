@@ -1,5 +1,7 @@
 # simple_geolocator
 [![Gem Version](https://badge.fury.io/rb/simple_geolocator.svg)](https://badge.fury.io/rb/simple_geolocator)
+[![Gem Downloads](https://img.shields.io/gem/dt/simple_geolocator.svg?maxAge=2592000)]()
+[![Gemnasium](https://img.shields.io/gemnasium/elifoster/simple_geolocator.svg?maxAge=2592000)]()
 
 A simple Geolocating Ruby Gem utilizing IP-API.com.
 
@@ -22,7 +24,7 @@ $ bundle
 ```
 
 ## Usage
-You can use it in your code or via IRB as described in the documentation. Or, if you wanna have some real fun, you can use the fancy command line interface added in version 1.3.0!
+You can use it in your code as described in the documentation. Or, if you wanna have some real fun, you can use the fancy command line interface added in version 1.3.0!
 
 ```
 $ simplegeo <ip>
