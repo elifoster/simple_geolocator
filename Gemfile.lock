@@ -1,21 +1,21 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    curb (0.9.1)
-    data_types (1.1.0)
+    curb (0.9.3)
+    data_types (1.1.1)
     oj (2.15.0)
-    rainbow (2.0.0)
-    string-utility (2.5.0)
+    rainbow (2.1.0)
+    string-utility (2.7.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  curb (~> 0.9.x)
-  data_types (~> 1.x)
-  oj (~> 2.x)
-  rainbow (~> 2.x)
-  string-utility (~> 2.5.x)
+  curb (~> 0.9)
+  data_types (~> 1)
+  oj (~> 2)
+  rainbow (~> 2)
+  string-utility (~> 2)
 
 BUNDLED WITH
    1.11.2
