@@ -1,5 +1,8 @@
 # Changelog
 ## Version 2
+### Version 2.0.1
+* Update StringUtility to version 3
+
 ### Version 2.0.0
 * Complete rewrite of the gem. Includes the following changes:
   * SimpleGeolocator is no longer a helper module containing methods for every type of data. Now, you call the 

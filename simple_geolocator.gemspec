@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
   s.authors = ['Eli Foster']
   s.name = 'simple_geolocator'
   s.summary = 'A Ruby gem for easily using the IP-API.com API to perform IP geolocation.'
-  s.version = '2.0.0'
+  s.version = '2.0.1'
   s.license = 'MIT'
   s.description = <<EOF
 Accessing the IP API through Curb. This gem has been made to be as simple to use as possible. As such, it even includes
@@ -21,7 +21,7 @@ EOF
   ]
   s.executables = 'simplegeo'
   s.add_runtime_dependency('rainbow', '~> 2')
-  s.add_runtime_dependency('string-utility', '~> 2')
+  s.add_runtime_dependency('string-utility', '~> 3')
   s.add_runtime_dependency('curb', '~> 0.9')
   s.add_runtime_dependency('oj', '~> 2')
   s.add_runtime_dependency('data_types', '~> 1')
