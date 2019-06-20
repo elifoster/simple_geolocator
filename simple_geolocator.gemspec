@@ -20,7 +20,7 @@ EOF
     'bin/simplegeo'
   ]
   s.executables = 'simplegeo'
-  s.add_runtime_dependency('rainbow', '~> 2')
+  s.add_runtime_dependency('rainbow', '~> 3')
   s.add_runtime_dependency('string-utility', '~> 3')
   s.add_runtime_dependency('curb', '~> 0.9')
   s.add_runtime_dependency('oj', '~> 2')

@@ -4,9 +4,11 @@
 path = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(path)
 
-require 'rainbow'
+require 'rainbow/refinement'
 require 'string-utility'
 require_relative '../lib/simple_geolocator'
+
+using Rainbow
 
 if ARGV.empty?
   fail 'You must provide an IP.'
@@ -26,10 +28,10 @@ mobile = response.mobile?
 proxy = response.proxy?
 
 puts "Here is the data for #{ip}:"
-puts Rainbow("ISP: #{isp}").color(StringUtility.random_color_six)
-puts Rainbow("Organization: #{org}").color(StringUtility.random_color_six)
-puts Rainbow("Timezone: #{timezone}").color(StringUtility.random_color_six)
-puts Rainbow("Location: #{city}, #{region}, #{country}, #{zip}").color(StringUtility.random_color_six)
-puts Rainbow("Exact location: #{ll.left}, #{ll.right}").color(StringUtility.random_color_six)
-puts Rainbow('They are using a mobile connection.').color(StringUtility.random_color_six) if mobile
-puts Rainbow('They are using a proxy.').color(StringUtility.random_color_six) if proxy
+puts "ISP: #{isp}".color(StringUtility.random_color_six)
+puts "Organization: #{org}".color(StringUtility.random_color_six)
+puts "Timezone: #{timezone}".color(StringUtility.random_color_six)
+puts "Location: #{city}, #{region}, #{country}, #{zip}".color(StringUtility.random_color_six)
+puts "Exact location: #{ll.left}, #{ll.right}".color(StringUtility.random_color_six)
+puts 'They are using a mobile connection.'.color(StringUtility.random_color_six) if mobile
+puts 'They are using a proxy.'.color(StringUtility.random_color_six) if proxy
