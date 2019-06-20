@@ -1,5 +1,9 @@
 # Changelog
 ## Version 2
+### Version 2.0.2
+* Update Rainbow to version 3, use its new refinements in CLI
+* Update Oj to version 3.7
+
 ### Version 2.0.1
 * Update StringUtility to version 3
 
