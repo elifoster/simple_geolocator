@@ -6,4 +6,4 @@ gem('oj', '~> 2')
 gem('rainbow', '~> 2')
 gem('string-utility', '~> 3')
 
-ruby '2.4.0'
+ruby '2.6.3'
