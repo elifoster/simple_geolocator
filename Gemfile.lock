@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     curb (0.9.10)
-    data_types (1.1.1)
+    data_types (1.1.2)
     oj (3.7.12)
     rainbow (3.0.0)
     string-utility (3.0.0)
