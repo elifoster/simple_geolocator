@@ -3,7 +3,7 @@ GEM
   specs:
     curb (0.9.10)
     data_types (1.1.2)
-    oj (3.7.12)
+    oj (3.8.1)
     rainbow (3.0.0)
     string-utility (3.0.0)
 
@@ -13,7 +13,7 @@ PLATFORMS
 DEPENDENCIES
   curb (~> 0.9)
   data_types (~> 1)
-  oj (~> 3.7)
+  oj (~> 3.8)
   rainbow (~> 3)
   string-utility (~> 3)
 
@@ -21,4 +21,4 @@ RUBY VERSION
    ruby 2.6.3p62
 
 BUNDLED WITH
-   1.16.0
+   1.17.3
