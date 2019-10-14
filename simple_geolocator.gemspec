@@ -23,6 +23,6 @@ EOF
   s.add_runtime_dependency('rainbow', '~> 3')
   s.add_runtime_dependency('string-utility', '~> 3')
   s.add_runtime_dependency('curb', '~> 0.9')
-  s.add_runtime_dependency('oj', '~> 3.8')
+  s.add_runtime_dependency('oj', '~> 3.9')
   s.add_runtime_dependency('data_types', '~> 1')
 end
