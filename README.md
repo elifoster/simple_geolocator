@@ -1,7 +1,6 @@
 # simple_geolocator
 [![Gem Version](https://badge.fury.io/rb/simple_geolocator.svg)](https://badge.fury.io/rb/simple_geolocator)
 [![Gem Downloads](https://img.shields.io/gem/dt/simple_geolocator.svg?maxAge=2592000)]()
-[![Gemnasium](https://img.shields.io/gemnasium/elifoster/simple_geolocator.svg?maxAge=2592000)]()
 
 A simple Geolocating Ruby Gem utilizing IP-API.com.
 
