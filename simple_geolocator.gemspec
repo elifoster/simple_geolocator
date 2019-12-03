@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
   s.authors = ['Eli Foster']
   s.name = 'simple_geolocator'
   s.summary = 'A Ruby gem for easily using the IP-API.com API to perform IP geolocation.'
-  s.version = '2.0.4'
+  s.version = '2.0.5'
   s.license = 'MIT'
   s.description = <<EOF
 Accessing the IP API through Curb. This gem has been made to be as simple to use as possible. As such, it even includes
