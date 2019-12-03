@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem('curb', '~> 0.9')
 gem('data_types', '~> 1')
-gem('oj', '~> 3.9')
+gem('oj', '~> 3.10')
 gem('rainbow', '~> 3')
 gem('string-utility', '~> 3')
 
