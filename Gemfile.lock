@@ -3,7 +3,7 @@ GEM
   specs:
     curb (0.9.10)
     data_types (1.1.2)
-    oj (3.10.8)
+    oj (3.10.14)
     rainbow (3.0.0)
     string-utility (3.0.0)
 
