@@ -57,114 +57,135 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'>
-<h1 id="label-Changelog">Changelog</h1>
+      <div id="content"><div id='filecontents'><h1 id="changelog">Changelog</h1>
 
-<h2 id="label-Version+2">Version 2</h2>
+<h2 id="version-2">Version 2</h2>
 
-<h3 id="label-Version+2.0.5">Version 2.0.5</h3>
-<ul><li>
-<p>Update Oj to version 3.10</p>
-</li></ul>
+<h3 id="version-2-0-7">Version 2.0.7</h3>
 
-<h3 id="label-Version+2.0.4">Version 2.0.4</h3>
-<ul><li>
-<p>Update Oj to version 3.9</p>
-</li></ul>
+<ul>
+<li>Update Oj to version 3.12</li>
+</ul>
 
-<h3 id="label-Version+2.0.3">Version 2.0.3</h3>
-<ul><li>
-<p>Update Oj to version 3.8</p>
-</li></ul>
+<h3 id="version-2-0-6">Version 2.0.6</h3>
 
-<h3 id="label-Version+2.0.2">Version 2.0.2</h3>
-<ul><li>
-<p>Update Rainbow to version 3, use its new refinements in CLI</p>
-</li><li>
-<p>Update Oj to version 3.7</p>
-</li></ul>
+<ul>
+<li>Update Oj to version 3.11</li>
+</ul>
 
-<h3 id="label-Version+2.0.1">Version 2.0.1</h3>
-<ul><li>
-<p>Update StringUtility to version 3</p>
-</li></ul>
+<h3 id="version-2-0-5">Version 2.0.5</h3>
 
-<h3 id="label-Version+2.0.0">Version 2.0.0</h3>
-<ul><li>
-<p>Complete rewrite of the gem. Includes the following changes:</p>
-</li><li>
-<p>SimpleGeolocator is no longer a helper module containing methods for every type of data. Now, you call the  <code>SimpleGeolocator#get</code> function, which returns an IPAPIResponse object. This object has instance attributes to  replace almost all of the old SimpleGeolocator module functions. The exception to this is connection, which has  been replaced by the <code>IPAPIResponse#mobile?</code> and <code>IPAPIResponse#proxy?</code> functions.</p>
-</li><li>
-<p>Proper error handling has been introduced. Functions will no longer return error strings. Now,  <code>IPAPIResponse#initialize</code> fails with the according errors, to quickly alert the developer or user that something  has gone wrong.</p>
-</li><li>
-<p><code>zip</code> is no longer an Integer, because that implies that some math should be done on it. It is a String now. You  can call <code>#to_i</code> if you for some reason want it to be an Integer.</p>
-</li><li>
-<p>Region (<code>#region</code>) and country (<code>#country</code>) are now represented by a LOCATION_STRUCT Struct, which has 2 instance  attributes: name and code.</p>
-</li><li>
-<p>Longitude and latitude (<code>#ll</code>) are no longer represented as an array, but a Pair from the data_types gem. This  makes significantly more conceptual sense.</p>
-</li><li>
-<p><code>#isp_name</code> and <code>#organization_name</code> are now represented by the new named <code>isp</code> and <code>organization</code> instance  attributes.</p>
-</li><li>
-<p>Changes to the libraries and requirements:</p>
-</li><li>
-<p>HTTPClient is no longer used. It had largely too much overhead for a gem this simple. When we do not need  keepalive, complicated requests, or even just a “full” client, I found it didn&#39;t make sense to use it. Now, Curb  is used.</p>
-</li><li>
-<p>The stdlib JSON library is not used anymore. It has been replaced by Optimized JSON (Oj) for performance reasons.</p>
-</li><li>
-<p>data_types is now a library used by SimpleGeolocator.</p>
-</li><li>
-<p>Pessimistic version requirements are now used.</p>
-</li></ul>
+<ul>
+<li>Update Oj to version 3.10</li>
+</ul>
 
-<h2 id="label-Version+1">Version 1</h2>
+<h3 id="version-2-0-4">Version 2.0.4</h3>
 
-<h3 id="label-Version+1.3.2">Version 1.3.2</h3>
-<ul><li>
-<p>License as MIT</p>
-</li></ul>
+<ul>
+<li>Update Oj to version 3.9</li>
+</ul>
 
-<h3 id="label-Version+1.3.1">Version 1.3.1</h3>
-<ul><li>
-<p>Update to Ruby 2.3 and HTTPClient 2.7</p>
-</li></ul>
+<h3 id="version-2-0-3">Version 2.0.3</h3>
 
-<h3 id="label-Version+1.3.0">Version 1.3.0</h3>
-<ul><li>
-<p>New CLI called &#39;simplegeo&#39;. Simply pass it an IP and it&#39;ll give you data!</p>
-</li></ul>
+<ul>
+<li>Update Oj to version 3.8</li>
+</ul>
 
-<h3 id="label-Version+1.2.0">Version 1.2.0</h3>
-<ul><li>
-<p>Implement a simple cache that will prevent you ever exceeding the request quota! (vladc)</p>
-</li><li>
-<p>New method connection for getting the types of connection you have (proxy and/or mobile) (vladc)</p>
-</li></ul>
+<h3 id="version-2-0-2">Version 2.0.2</h3>
 
-<h3 id="label-Version+1.1.0">Version 1.1.0</h3>
-<ul><li>
-<p>Fix error method causing NoMethodError.</p>
-</li><li>
-<p>Better documentation for all methods, including adding the missing documentation for the private error method.</p>
-</li><li>
-<p>Case/When statement instead of if conditional in request_successful?</p>
-</li><li>
-<p>Better code in all the getter methods, improving how values are returned and how error is called.</p>
-</li><li>
-<p>New get_error_description for getting the description to go with the ambiguous error message.</p>
-</li><li>
-<p>Better error code, which is now dependent on request_successful?, instead of having getter methods being dependent on request_successful?. This greatly reduces the length of the methods.</p>
-</li><li>
-<p>HTTPClient dependency is no longer open-ended.</p>
-</li></ul>
+<ul>
+<li>Update Rainbow to version 3, use its new refinements in CLI</li>
+<li>Update Oj to version 3.7</li>
+</ul>
 
-<h3 id="label-Version+1.0.0">Version 1.0.0</h3>
-<ul><li>
-<p>Initial release version. Contains methods for most everything available with IP-API.com. The only API that I am not utilizing is the DNS API. That should come in a future release.</p>
-</li></ul>
+<h3 id="version-2-0-1">Version 2.0.1</h3>
+
+<ul>
+<li>Update StringUtility to version 3</li>
+</ul>
+
+<h3 id="version-2-0-0">Version 2.0.0</h3>
+
+<ul>
+<li>Complete rewrite of the gem. Includes the following changes:
+
+<ul>
+<li>SimpleGeolocator is no longer a helper module containing methods for every type of data. Now, you call the 
+<code>SimpleGeolocator#get</code> function, which returns an IPAPIResponse object. This object has instance attributes to 
+replace almost all of the old SimpleGeolocator module functions. The exception to this is connection, which has 
+been replaced by the <code>IPAPIResponse#mobile?</code> and <code>IPAPIResponse#proxy?</code> functions.</li>
+<li>Proper error handling has been introduced. Functions will no longer return error strings. Now, 
+<code>IPAPIResponse#initialize</code> fails with the according errors, to quickly alert the developer or user that something 
+has gone wrong.</li>
+<li><code>zip</code> is no longer an Integer, because that implies that some math should be done on it. It is a String now. You 
+can call <code>#to_i</code> if you for some reason want it to be an Integer.</li>
+<li>Region (<code>#region</code>) and country (<code>#country</code>) are now represented by a LOCATION_STRUCT Struct, which has 2 instance 
+attributes: name and code.</li>
+<li>Longitude and latitude (<code>#ll</code>) are no longer represented as an array, but a Pair from the data_types gem. This 
+makes significantly more conceptual sense.</li>
+<li><code>#isp_name</code> and <code>#organization_name</code> are now represented by the new named <code>isp</code> and <code>organization</code> instance 
+attributes.</li>
+</ul></li>
+<li>Changes to the libraries and requirements:
+
+<ul>
+<li>HTTPClient is no longer used. It had largely too much overhead for a gem this simple. When we do not need 
+keepalive, complicated requests, or even just a &quot;full&quot; client, I found it didn&#39;t make sense to use it.  Now, Curb 
+is used.</li>
+<li>The stdlib JSON library is not used anymore. It has been replaced by Optimized JSON (Oj) for performance reasons.</li>
+<li>data_types is now a library used by SimpleGeolocator.</li>
+<li>Pessimistic version requirements are now used.</li>
+</ul></li>
+</ul>
+
+<h2 id="version-1">Version 1</h2>
+
+<h3 id="version-1-3-2">Version 1.3.2</h3>
+
+<ul>
+<li>License as MIT</li>
+</ul>
+
+<h3 id="version-1-3-1">Version 1.3.1</h3>
+
+<ul>
+<li>Update to Ruby 2.3 and HTTPClient 2.7</li>
+</ul>
+
+<h3 id="version-1-3-0">Version 1.3.0</h3>
+
+<ul>
+<li>New CLI called &#39;simplegeo&#39;. Simply pass it an IP and it&#39;ll give you data!</li>
+</ul>
+
+<h3 id="version-1-2-0">Version 1.2.0</h3>
+
+<ul>
+<li>Implement a simple cache that will prevent you ever exceeding the request quota! (vladc)</li>
+<li>New method connection for getting the types of connection you have (proxy and/or mobile) (vladc)</li>
+</ul>
+
+<h3 id="version-1-1-0">Version 1.1.0</h3>
+
+<ul>
+<li>Fix error method causing NoMethodError.</li>
+<li>Better documentation for all methods, including adding the missing documentation for the private error method.</li>
+<li>Case/When statement instead of if conditional in request_successful?</li>
+<li>Better code in all the getter methods, improving how values are returned and how error is called.</li>
+<li>New get_error_description for getting the description to go with the ambiguous error message.</li>
+<li>Better error code, which is now dependent on request_successful?, instead of having getter methods being dependent on request_successful?. This greatly reduces the length of the methods.</li>
+<li>HTTPClient dependency is no longer open-ended.</li>
+</ul>
+
+<h3 id="version-1-0-0">Version 1.0.0</h3>
+
+<ul>
+<li>Initial release version. Contains methods for most everything available with IP-API.com. The only API that I am not utilizing is the DNS API. That should come in a future release.</li>
+</ul>
 </div></div>
 
       <div id="footer">
-  Generated on Mon Jan 18 10:46:34 2021 by
+  Generated on Sat Aug 21 12:28:10 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-3.0.0).
 </div>
