@@ -1,5 +1,8 @@
 # Changelog
 ## Version 2
+### Version 2.0.7
+* Update Oj to version 3.12
+
 ### Version 2.0.6
 * Update Oj to version 3.11
 
